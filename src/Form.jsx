@@ -21,7 +21,7 @@ const Form = () => {
     };
     console.log(data);
     try {
-      const response = await fetch("http://localhost:5000/f", {
+      const response = await fetch("https://task-backend-l5oz.onrender.com/f", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -39,7 +39,7 @@ const Form = () => {
     }
   };
   useEffect(() => {
-    fetch("http://localhost:5000/form")
+    fetch("https://task-backend-l5oz.onrender.com/form")
       .then((res) => res.json())
       .then((data) => setBackend(data))
       .catch((error) => console.error(error));

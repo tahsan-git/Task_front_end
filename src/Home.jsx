@@ -12,7 +12,7 @@ const Home = () => {
     console.log(task_id)
     setComplete((count) => count+1)
     try{
-      const response = await fetch(`http://localhost:5000/t/${task_id}`,{
+      const response = await fetch(`https://task-backend-l5oz.onrender.com/t/${task_id}`,{
         method: "DELETE",
       });
       if(response.ok){
@@ -32,7 +32,7 @@ const Home = () => {
     const data = { task: task.value, date: date.value };
 
     try {
-      const response = await fetch("http://localhost:5000/t", {
+      const response = await fetch("https://task-backend-l5oz.onrender.com/t", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -51,7 +51,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/t_list")
+    fetch("https://task-backend-l5oz.onrender.com/t_list")
       .then((res) => res.json())
       .then((data) => setPendingTask(data))
       .catch((error) => console.error(error));

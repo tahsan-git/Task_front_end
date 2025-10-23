@@ -9,7 +9,7 @@ const LogInForm = () => {
     const val = email.value
 
     try{
-      const response = await fetch(`http://localhost:5000/userEmail?email=${val}`).then((res) => res.json()).then(() => setIsLogIn(true)).catch((error) => console.error(error))
+      const response = await fetch(`https://task-backend-l5oz.onrender.com/userEmail?email=${val}`).then((res) => res.json()).then(() => setIsLogIn(true)).catch((error) => console.error(error))
     }
     catch(error){
       console.error(error)
